@@ -63,13 +63,13 @@ public class Main extends AppCompatActivity {
                 //程序主界面//
                 setContentView(R.layout.layout_after_log_in);
 
-//                //输入框
+                //输入框
                 editTextSearchAndAdd = (EditText)findViewById(R.id.editTextAfterLogInSearchAndAdd);
 
-//                //搜索按钮
+                //搜索按钮
                 buttonSearch = (Button)findViewById(R.id.buttonAfterLogInSearch);
                 buttonSearch.setOnClickListener(new View.OnClickListener() {
-                    @Override
+                    {}@Override
                     public void onClick(View v) {
 
                     }
@@ -77,7 +77,7 @@ public class Main extends AppCompatActivity {
                 //添加按钮
                 buttonAdd = (Button)findViewById(R.id.buttonAfterLogInAdd);
                 buttonAdd.setOnClickListener(new View.OnClickListener(){
-                    @Override
+                    {}@Override
                     public void onClick(View v) {
                         //应该有查重，查空的功能，添加后清空输入框
                         String newBook = editTextSearchAndAdd.getText().toString();
@@ -118,7 +118,7 @@ public class Main extends AppCompatActivity {
 //                        Main.this.startActivity(intent);
                     }
                 });
-//                //--------------------------------------------------------------------------------------------------------------
+                //--------------------------------------------------------------------------------------------------------------
 
                 buttonDefaultBook = (Button)findViewById(R.id.buttonAfterLogInDefaultBook);
                 buttonDefaultBook.setOnClickListener(new View.OnClickListener() {
