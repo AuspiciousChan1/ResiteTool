@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">OYL</string>
+    <string name="main_title">记忆之道</string>
+    <string name="key">要点</string>
+    <string name="value">解释</string>
+
+<!--单词-->
+    <string name="account">账号</string>
+    <string name="password">密码</string>
+    <string name="log_in">登录</string>
+    <string name="register">注册</string>
+    <string name="default_book">默认表格</string>
+    <string name="search">搜索</string>
+    <string name="add">添加</string>
+    <string name="message_box">信息框</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+<!--提示语-->
+    <string name="there_are_no_word_in_the_book">此地空空如也</string>
+    <string name="add_one_by_one">手动添加区</string>
+
+    <!-- 长文区-->
+    <string name="saved_words">
+        正式群体\n
+        \t由所在组织的结构所确定的工作群体，有明确的工作分工和具体的工作任务，而且所有这些都是为了实现该组织目标\n
+        命令群体\n
+        \t根据组织章程组建，由直接向某位管理者汇报的下属组成\n
+        任务群体\n
+        \t由工作任务而组合人员，任务结束便解散\n
+        跨职能群体\n
+        \t组合不同工作部门或领域的人员，把不同知识和技能组合起来\n
+        自我管理型团队\n
+        \t基本独立的群体，出完成工作任务外，还履行某些管理职责\n
+    </string>
+
+</resources>

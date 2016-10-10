@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/textViewDefaultBookTitle"
+            android:text="@string/add_one_by_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"/>
+
+    <EditText
+            android:id="@+id/editTextDefaultBookKey"
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/textViewDefaultBookTitle"
+            android:layout_marginTop="100dp"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:id="@+id/textViewDefaultBookKey"
+            android:text="@string/key"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/editTextDefaultBookKey" android:layout_marginTop="-30dp"
+            android:layout_alignParentStart="true"/>
+
+    <EditText
+            android:id="@+id/editTextDefaultBookValue"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/editTextDefaultBookKey"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:id="@+id/textViewDefaultBookValue"
+            android:text="@string/value"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/editTextDefaultBookValue" android:layout_marginTop="-30dp"
+            android:layout_alignParentStart="true"/>
+    <Button
+            android:id="@+id/buttonDefaultBookAdd"
+            android:text="@string/add"
+            android:layout_width="100dp" android:layout_height="61.8dp"
+            android:layout_below="@id/editTextDefaultBookValue"
+            android:layout_centerHorizontal="true"
+    />
+
+</RelativeLayout>
