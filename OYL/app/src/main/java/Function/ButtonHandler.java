@@ -15,23 +15,23 @@ public class ButtonHandler {
         linearLayout.addView(button);
         return button;
     }
-    public static Button createButtonInLinearLayout(int width, int height,String text, Context context, LinearLayout linearLayout, View.OnClickListener onClick){
+    public static Button createButtonInLinearLayout(int width, int height,String text, Context context, LinearLayout linearLayout, View.OnClickListener onClick)throws NullPointerException{
         Button button = new Button(context);
         button.setWidth(width);
         button.setHeight(height);
         button.setText(text);
         button.setOnClickListener(onClick);
-        linearLayout.addView(button);
+        linearLayout.addView(button);//如果linearLayout=null，则会抛出错误
         return button;
     }
-    public static Button createButtonInLinearLayout(int width, int height,String text, int color, Context context, LinearLayout linearLayout, View.OnClickListener onClick){
+    public static Button createButtonInLinearLayout(int width, int height,String text, int color, Context context, LinearLayout linearLayout, View.OnClickListener onClick)throws NullPointerException{
         Button button = new Button(context);
         button.setWidth(width);
         button.setHeight(height);
         button.setText(text);
         button.setBackgroundColor(color);
         button.setOnClickListener(onClick);
-        linearLayout.addView(button);
+        linearLayout.addView(button);//如果linearLayout=null，则会抛出错误
         return button;
     }
 }

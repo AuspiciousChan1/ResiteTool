@@ -4,6 +4,7 @@ import Data.Constant;
 import Data.Variable;
 import Function.ButtonHandler;
 import Function.MyMessageBox;
+import MyType.WordBook;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -26,7 +27,7 @@ public class Main extends AppCompatActivity {
 
     //______________________________________________________________________________________________________________
     //程序主界面//
-    private LinearLayout linearLayoutAfterLogInFunction = null;
+//    private LinearLayout linearLayoutAfterLogInFunction = null;
     private LinearLayout linearLayoutAfterLogInBooks = null;
     private EditText editTextSearchAndAdd = null;
     private Button buttonSearch = null;
@@ -75,21 +76,29 @@ public class Main extends AppCompatActivity {
                     }
                 });
                 //添加按钮
+                linearLayoutAfterLogInBooks = (LinearLayout)findViewById(R.id.linearLayoutAfterLogInBooks);
                 buttonAdd = (Button)findViewById(R.id.buttonAfterLogInAdd);
                 buttonAdd.setOnClickListener(new View.OnClickListener(){
                     {}@Override
                     public void onClick(View v) {
                         //应该有查重，查空的功能，添加后清空输入框
                         String newBook = editTextSearchAndAdd.getText().toString();
+                        WordBook wordBook = new WordBook(newBook);
                         if(newBook != null && newBook.length() > 0){
-                            if(!Variable.bookList.contains(newBook)){
-                                Variable.bookList.add(newBook);
-                                ButtonHandler.createButtonInLinearLayout(linearLayoutAfterLogInBooks.getWidth(), Constant.buttonBookListHeight, newBook, Main.this, linearLayoutAfterLogInBooks, new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        System.out.println("新本");
-                                    }
-                                });
+                            if(!Variable.bookList.contains(wordBook)){
+                                Variable.bookList.add(wordBook);
+                                try {
+                                    ButtonHandler.createButtonInLinearLayout(linearLayoutAfterLogInBooks.getWidth(), Constant.buttonBookListHeight, newBook, Main.this, linearLayoutAfterLogInBooks, new View.OnClickListener() {
+                                        {}@Override
+                                        public void onClick(View v) {
+                                            System.out.println("新本");
+                                        }
+                                    });
+                                }
+                                catch (NullPointerException e){
+                                    e.printStackTrace();
+                                    System.out.println("添加单词本出错：" + e);
+                                }
                                 editTextSearchAndAdd.setText("");
                             }
                             else{
@@ -97,7 +106,7 @@ public class Main extends AppCompatActivity {
                             }
                         }
                         else{
-                            MyMessageBox.showInformation("输入不能为空", Main.this);
+                            MyMessageBox.showInformation("单词本名称不能为空", Main.this);
                         }
 //                        //直接拨打
 //                        //Intent intent = new Intent(Intent.ACTION_CALL);
