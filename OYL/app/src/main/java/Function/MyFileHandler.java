@@ -27,10 +27,21 @@ public class MyFileHandler {
     //写数据
     public static boolean writeTxtToInnerStorage(String fileName, String detail, Context context) {
         try {
-            FileOutputStream fileOutputStream = context.openFileOutput(fileName, Activity.MODE_PRIVATE);
-            fileOutputStream.write(detail.getBytes());
-            fileOutputStream.flush();
-            fileOutputStream.close();
+//            String innerPath = Environment.getExternalStorageState();
+//            FileOutputStream fileOutputStream = context.openFileOutput(innerPath + fileName, Activity.MODE_PRIVATE);
+//            fileOutputStream.write(detail.getBytes());
+//            fileOutputStream.flush();
+//            fileOutputStream.close();
+//            return true;
+
+            File file = new File(Environment.getExternalStorageState() + fileName);
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            else {
+                file.delete();
+                file.createNewFile();
+            }
             return true;
         }
         catch (FileNotFoundException fnfe) {

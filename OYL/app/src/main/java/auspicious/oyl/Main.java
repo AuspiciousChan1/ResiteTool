@@ -3,6 +3,7 @@ package auspicious.oyl;
 import Data.Constant;
 import Data.Variable;
 import Function.ButtonHandler;
+import Function.MyFileHandler;
 import Function.MyMessageBox;
 import MyType.WordBook;
 import android.content.Intent;
@@ -27,7 +28,6 @@ public class Main extends AppCompatActivity {
 
     //______________________________________________________________________________________________________________
     //程序主界面//
-//    private LinearLayout linearLayoutAfterLogInFunction = null;
     private LinearLayout linearLayoutAfterLogInBooks = null;
     private EditText editTextSearchAndAdd = null;
     private Button buttonSearch = null;
@@ -45,6 +45,7 @@ public class Main extends AppCompatActivity {
         Variable.screenheight = screenHeight;
         Variable.screenWidth = screenWidth;
 
+        MyFileHandler.writeTxtToInnerStorage("test20161011.txt", "Hello World!", Main.this);
         //______________________________________________________________________________________________________________
         //登录界面//
         setContentView(R.layout.layout_main);
@@ -75,6 +76,7 @@ public class Main extends AppCompatActivity {
 
                     }
                 });
+
                 //添加按钮
                 linearLayoutAfterLogInBooks = (LinearLayout)findViewById(R.id.linearLayoutAfterLogInBooks);
                 buttonAdd = (Button)findViewById(R.id.buttonAfterLogInAdd);
@@ -142,5 +144,4 @@ public class Main extends AppCompatActivity {
         });
 
     }
-
 }
